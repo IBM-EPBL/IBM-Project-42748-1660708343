@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Resale Value Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        body{
+            background-color: #fcde67;
+        }
+        .container{
+            background-color: #fcde67;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group{
+            margin-top: 20px;
+        }
+        .form-control{
+            border-radius: 0px;
+        }
+        .btn{
+            border-radius: 80px;
+            margin-top: 20px;
+            background-color: #059862;
+	    border-color: #059862;
+        }
+        .fa{
+            font-size: 30px;
+            color: #f2f2f2;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center" style = "font-family:Argent CF"><b>Car Resale Value Prediction</b></h1>
+	<h5 style = "text-align:center"><i><strong>Please fill the following details of your car !!! </strong></i></h5><br>
+        <form action="/submit" method="POST">
+
+            <div class="form-group">
+                <label for="yearofRegistration"><b>Registration Year</b></label>
+                <input type="number" class="form-control" id="yearofRegistration" name="yearofRegistration" placeholder="Enter Year of Registration">
+            </div>
+            <div class="form-group">
+                <label for="monthofRegistration"><b>Registration Month</b></label>
+                <input type="number" class="form-control" id="monthofRegistration" name="monthofRegistration" placeholder="Enter Month of Registration">
+            </div>
+            <div class="form-group">
+                <label for="powerPS"><b>Power of the car in PS</b></label>
+                <input type="number" class="form-control" id="powerPS" name="powerPS" placeholder="Enter Power of the car in PS">
+            </div>
+            <div class="form-group">
+                <label for="kilometer"><b>Kilometers Driven </b></label>
+                <input type="number" class="form-control" id="kilometer" name="kilometer" placeholder="Enter Kilometers Driven">
+            </div>
+            <div class="form-group">
+                <label for="notRepairedDamage"><b>Your car is Damaged or Repaired</b></label>
+		        <select class="form-control" id="notRepairedDamage" name="notRepairedDamage">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="not-declared">Not-declared</option>
+                </select>
+            <div class="form-group">
+                <label for="brand"><b>Brand of the car</b></label>
+                <select class="form-control" id="brand" name="brand">
+              		<option value="audi">Audi</option>
+                    <option value="bmw">BMW</option>
+                    <option value="dacia">Dacia</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="ford">Ford</option>
+                    <option value="honda">Honda</option>
+                    <option value="hyundai">Hyundai</option>
+                  	<option value="jeep">Jeep</option>
+                    <option value="kia">Kia</option>
+                    <option value="mercedes_benz">Mercedes Benz</option>
+                    <option value="mitsubishi">Mitsubishi</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="peugeot">Peugeot</option>
+                    <option value="porsche">Porsche</option>
+                  	<option value="renault">Renault</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="suzuki">Suzuki</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="volkswagen">Volkswagon</option>
+                  	<option value="volvo">Volvo</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="vehicleType"><b>Vehicle Type</b></label>
+                <select class="form-control" id="vehicleType" name="vehicleType">
+              		<option value="bus">Bus</option>
+                    <option value="combination">Combination</option>
+                    <option value="convertible">Convertible</option>
+                    <option value="coupe">Coupe</option>
+                    <option value="limousine">Limousine</option>
+                  	<option value="small car">Small Car</option>
+                    <option value="suv">SUV</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gearbox_feat"><b>Gear Box Type</b></label>
+                <select class="form-control" id="gearbox_feat" name="gearbox_feat">
+                    <option value="manual">Manual</option>
+                    <option value="automatic">Automatic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fuelType_feat"><b>Fuel Type</b></label>
+                <select class="form-control" id="fuelType_feat" name="fuelType_feat">
+                    <option value="cng">CNG</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="lpg">LPG</option>
+                    <option value="petrol">Petrol</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style = "position:relative;left:500px;top:2px;font-size:medium;">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
